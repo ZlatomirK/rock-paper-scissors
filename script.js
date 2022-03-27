@@ -1,76 +1,64 @@
 console.log("hello men")
 
-let draw = 0
+const choice = ['rock','paper','scissors'];
 
-let win = 0
+let draws = 0;
 
-let lose = 0
+let wins = 0;
+
+let loses = 0;
+
+let player = 'none';
+
+function playerChoice() {
+    player = prompt('Your play (rock, paper or scissors):')
+            .toLowerCase();
+
+    if (choice.includes(player)) {
+        return;
+    } 
+    else {
+        playerChoice();
+    }
+}
+
 
 function Play() {
 
-    let computerPlay = "none";
+    let computer = choice[Math.floor(Math.random()*3)];
+
+    playerChoice()
+
+    console.log('Computer chose : ', computer);
+    console.log('You chose : ', player);
     
-    let computerPlay2 = "none";
-    
-    let playerPlay = "none";
-    
-    let result = "none";
-    
-    let random = Math.floor(Math.random()*3)+1;;
-    
-    if (random == 1) {
-        computerPlay = "rock";
-    }
-    else if (random == 2) {
-        computerPlay = "paper";
-    }
-    else {
-        computerPlay = "scissors";
-    }
-    
-    
-    playerPlay = window.prompt("Your play(1 rock, 2 paper, 3 scissors): ");
-    
-    if (playerPlay == 1) {
-        computerPlay2 = "rock";
-    }
-    else if (playerPlay == 2) {
-        computerPlay2 = "paper";
-    }
-    else if (playerPlay == 3) {
-        computerPlay2 = "scissors";
-    }
-    
-    console.log(computerPlay);
-    console.log(computerPlay2);
-    
-    if (random == playerPlay) {
+    if (computer == player) {
         result = "Draw!";
-        draw = draw+1;
+        draws = draws+1;
     }
-    else if (random == 1 && playerPlay == 2) {
+    else if (computer == 'rock' && player == 'paper') {
         result = "You Win! Paper beats rock!";
-        win = win+1;
+        wins = wins+1;
     }
-    else if (random == 1 && playerPlay == 3) {
+    else if (computer == 'rock' && player == 'scissors') {
         result = "You Lose! rock beats scissors!";
-        lose = lose+1;
+        loses = loses+1;
     }
-    else if (random == 2 && playerPlay == 1) {
+    else if (computer == 'paper' && player == 'rock') {
         result = "You Lose! Paper beats rock!";
-        lose = lose+1;
+        loses = loses+1;
     }
-    else if (random == 2 && playerPlay == 3) {
+    else if (computer == 'paper' && player == 'scissors') {
         result = "You Win! scissors beat paper";
-        win = win+1;
+        wins = wins+1;
     }
-    else if (random == 3 && playerPlay == 1) {
+    else if (computer == 'scissors' && player == 'rock') {
         result = "You Win! rock beats scissors";
-        win = win+1;
+        wins = wins+1;
     }
-    else if (random == 3 && playerPlay == 2) {
+    else if (computer == 'scissors' && player == 'paper') {
         result = "You Lose! scissors beat paper";
-        lose = lose+1;
+        loses = loses+1;
     }
     
     console.log(result);
@@ -81,9 +69,9 @@ function Play() {
 function game() {
     for (let i = 0; i < 5; i++) {
         Play();
-        console.log("You drew ",draw," times, won ",win," times and lost "
-                ,lose," times.");
      }
 }
 
-game()
+game();
+
+console.log("You drew ",draws," times, won ",wins," times and lost ",loses," times.");
