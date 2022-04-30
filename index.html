@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <script src="./script.js" defer></script>
 </head>
 <body>
-    <script src="./script.js"></script>
+
+  <div class="score">
+    <div class="rpc1">
+      <div>ROCK</div>
+      <div>PAPER</div>
+      <div>SCISSORS</div>
+    </div>
+    <div class="score-box">
+      <div class="score-word">score</div>
+      <div class="score-number">0</div>
+    </div>
+  </div>
+  <div class="rpc-main">
+    <div class="rpc-main-top">
+      <div class="paper">
+        <div class="button-paper-blue">
+          <button class="button-paper">
+            <img src="./images/icon-paper.svg">
+          </button>
+        </div>
+      </div>
+      <div class="scissors">
+        <div class="button-scissors-yellow">
+          <button class="button-scissors">
+            <img src="./images/icon-scissors.svg">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="rock">
+      <div class="button-rock-red">
+        <button class="button-rock">
+          <img src="./images/icon-rock.svg">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="backdrop">
+    <div class="rules-button-container">
+      <button class="rules">RULES</button>
+    </div>
+    <div id="modal" class="popup-modal hidden">
+      <div class="modal-top">
+        <div class="rules-text">RULES</div>
+        <button id="close" class="close-rules-button">
+          <img src="./images/icon-close.svg">
+        </button>
+      </div>
+      <img src="./images/image-rules.svg">
+    </div>
+  </div>
+
 </body>
 </html>

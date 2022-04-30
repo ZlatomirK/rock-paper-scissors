@@ -1,6 +1,18 @@
-console.log("hello men")
-
 const choice = ['rock','paper','scissors'];
+
+const rock = document.querySelector(".rock")
+
+const paper = document.querySelector(".paper")
+
+const scissors = document.querySelector(".scissors")
+
+const scoreNumber = document.querySelector(".score-number")
+
+const rules = document.querySelector(".rules")
+
+const modal = document.getElementById("modal")
+
+const closeButton = document.getElementById("close")
 
 let draws = 0;
 
@@ -8,70 +20,83 @@ let wins = 0;
 
 let loses = 0;
 
+let result = 0;
+
+let computer = "none";
+
+let score = 0;
+
 let player = 'none';
 
-function playerChoice() {
-    player = prompt('Your play (rock, paper or scissors):')
-            .toLowerCase();
+rock.addEventListener("click", () => {
+    player = "rock"
+    computerChoice()
+    Play()
+})
 
-    if (choice.includes(player)) {
-        return;
-    } 
-    else {
-        playerChoice();
-    }
+paper.addEventListener("click", () => {
+    player = "paper"
+    computerChoice()
+    Play()
+})
+
+scissors.addEventListener("click", () => {
+    player = "scissors"
+    computerChoice()
+    Play()
+})
+
+function computerChoice() {
+    computer = choice[Math.floor(Math.random()*3)];
 }
 
+rules.addEventListener("click", () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('show');
+})
+
+closeButton.addEventListener("click", () => {
+    modal.classList.remove('show');
+    modal.classList.add('hidden');
+})
 
 function Play() {
-
-    let computer = choice[Math.floor(Math.random()*3)];
-
-    playerChoice()
 
     console.log('Computer chose : ', computer);
     console.log('You chose : ', player);
     
     if (computer == player) {
         result = "Draw!";
-        draws = draws+1;
     }
     else if (computer == 'rock' && player == 'paper') {
         result = "You Win! Paper beats rock!";
-        wins = wins+1;
+        score = score +1;
+        scoreNumber.textContent = score;
     }
     else if (computer == 'rock' && player == 'scissors') {
         result = "You Lose! rock beats scissors!";
-        loses = loses+1;
+        score = score -1;
+        scoreNumber.textContent = score;
     }
     else if (computer == 'paper' && player == 'rock') {
         result = "You Lose! Paper beats rock!";
-        loses = loses+1;
+        score = score -1;
+        scoreNumber.textContent = score;
     }
     else if (computer == 'paper' && player == 'scissors') {
         result = "You Win! scissors beat paper";
-        wins = wins+1;
+        score = score +1;
+        scoreNumber.textContent = score;
     }
     else if (computer == 'scissors' && player == 'rock') {
         result = "You Win! rock beats scissors";
-        wins = wins+1;
+        score = score +1;
+        scoreNumber.textContent = score;
     }
     else if (computer == 'scissors' && player == 'paper') {
         result = "You Lose! scissors beat paper";
-        loses = loses+1;
+        score = score -1;
+        scoreNumber.textContent = score;
     }
     
-    console.log(result);
-
 }
-
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-        Play();
-     }
-}
-
-game();
-
-console.log("You drew ",draws," times, won ",wins," times and lost ",loses," times.");

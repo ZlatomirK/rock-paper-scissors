@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body{
+    background: hsl(214, 47%, 23%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    color: white;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.score{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 600px;
+    margin-top: 50px;
+    border: rgba(167, 167, 167, 0.5) 3px solid;
+    padding: 30px;
+    border-radius: 20px;
+    height: 30%;
+}
+
+.rpc1{
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.score-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: white solid;
+    background-color: white;;
+    border-radius: 10px;
+    padding: 5px 50px
+}
+
+.score-word{
+    color: hsl(229, 64%, 46%);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.score-number{
+    color: hsl(229, 25%, 31%);
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.rpc-main{
+    margin-top: 100px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    background: url(./images/bg-triangle.svg) center fixed no-repeat;
+}
+
+.button-rock{
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 50px;
+    border: none;
+}
+
+.button-rock-red{
+    cursor: pointer;
+    background-color: hsl(349, 71%, 52%);
+    padding: 30px;
+    border-radius: 50%;
+    justify-self: center;
+}
+
+.rock,.paper,.scissors{
+    justify-self: center;
+}
+
+.button-paper{
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 50px;
+    border: none;
+}
+
+.button-paper-blue{
+    cursor: pointer;
+    background-color: hsl(230, 89%, 62%);
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.button-scissors{
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 50px;
+    border: none;
+}
+
+.button-scissors-yellow{
+    cursor: pointer;
+    background-color: hsl(39, 89%, 49%);
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.rpc-main-top{
+    display: flex;
+    gap: 40px;
+}
+
+.rules{
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-end;
+    border: rgba(167, 167, 167, 0.7) 2px solid;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 24px;
+    margin-right: 50px;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.backdrop{
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+
+.show{
+    display: flex !important;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.popup-modal{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.rules-text{
+    color: hsl(214, 47%, 23%);
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.close-rules-button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.modal-top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+}
