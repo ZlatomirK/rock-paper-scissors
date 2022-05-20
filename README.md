@@ -1,5 +1,7 @@
 # Frontend Mentor - Rock, Paper, Scissors
 
+https://zlatomirk.github.io/rock-paper-scissors/
+
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
